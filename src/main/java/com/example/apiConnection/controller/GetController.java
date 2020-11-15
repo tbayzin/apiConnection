@@ -1,4 +1,4 @@
-package com.example.apiConnection;
+package com.example.apiConnection.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
