@@ -10,18 +10,18 @@ import java.util.Random;
 
 @Controller
 @RequestMapping ("/ozgurproject")
-public class GetController {
+public class PostController {
 
-      boolean isEven;
+      boolean isEven;d
 
          Random number = new Random();
         int number1 = number.nextInt(10);
 
-      @RequestMapping(value = "/api", method = RequestMethod.GET)
+      @RequestMapping(value = "/api", method = RequestMethod.POST)
 @ResponseBody
-    public boolean getResult () {
+    public boolean getResult (int number, String name) {
 
-        if (number1 %2 ==0 ) {
+        if (number %2 ==0 ) {
             isEven = true;
 
         }
