@@ -10,17 +10,12 @@ import java.util.*;
 
 @Controller
 @RequestMapping ("/ozgurproject")
-public class PostController {
-
-    boolean isEven;  // UPDATE DEN ÖNCE PUSHLANAN
+public class CityController {
 
 
     City city = new City();
 
     SehirDTO sehirDTO = new SehirDTO();
-
-//       Random number = new Random();
-    //    int number1 = number.nextInt(10);
 
 
     @RequestMapping(value = "/api", method = RequestMethod.GET)
@@ -29,7 +24,6 @@ public class PostController {
 
         return "Kars";
     }
-
 
 
 
