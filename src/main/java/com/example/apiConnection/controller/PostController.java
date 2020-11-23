@@ -1,36 +1,65 @@
 package com.example.apiConnection.controller;
 
+import com.example.apiConnection.City;
+import com.example.apiConnection.controller.model.dto.SehirDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Random;
+import java.util.*;
 
 @Controller
 @RequestMapping ("/ozgurproject")
 public class PostController {
 
-      boolean isEven;d
+    boolean isEven;  // UPDATE DEN ÖNCE PUSHLANAN
 
-         Random number = new Random();
-        int number1 = number.nextInt(10);
 
-      @RequestMapping(value = "/api", method = RequestMethod.POST)
-@ResponseBody
-    public boolean getResult (int number, String name) {
+    City city = new City();
 
-        if (number %2 ==0 ) {
-            isEven = true;
+    SehirDTO sehirDTO = new SehirDTO();
 
-        }
+//       Random number = new Random();
+    //    int number1 = number.nextInt(10);
 
-        else {
-            isEven = false;
-        }
 
-        return isEven;
+    @RequestMapping(value = "/api", method = RequestMethod.GET)
+    @ResponseBody
+    public String getCity() {
+
+        return "Kars";
     }
 
+
+
+    @PostMapping("/api")
+    @ResponseBody
+    public ArrayList <SehirDTO> addCity(@RequestBody ArrayList<SehirDTO> sehirList) {
+
+        boolean flag = false;
+        for (SehirDTO dto : sehirList) {
+            if (dto.getSehirAdi().contains("kars")) {
+                System.out.println("iceriyor");
+                flag= true;
+                break;
+            }
+        }
+        if (!flag) System.out.println("icermiyor");
+
+
+        /*  ALTERNATIF
+        for(int i = 0; i<sehirList.size(); i++) {
+            SehirDTO dto = sehirList.get(i);
+
+        }
+        if (!flag) System.out.println("icermiyor");
+        if (sehirList.contains("kars")) {
+            System.out.println("içeriyor");
+        } else {
+            System.out.println("içermiyor");
+        }
+            */
+
+        return sehirList;
+    }
 }
