@@ -2,15 +2,34 @@ package com.example.apiConnection.controller.model.dto;
 
 public class SehirDTO {
 
-    String sehirAdi;
+   private String sehirAdi;
+    private String belediyeBaskani;
+    private String sehirBolgesi;
     Integer sehirKodu;
+    Integer sehirNufusu;
 
-    @Override
-    public String toString() {
-        return "SehirDTO{" +
-                "sehirAdi='" + sehirAdi + '\'' +
-                ", sehirKodu=" + sehirKodu +
-                '}';
+
+
+
+
+
+
+
+
+    public String getSehirBolgesi() {
+        return sehirBolgesi;
+    }
+
+    public void setSehirBolgesi(String sehirBolgesi) {
+        this.sehirBolgesi = sehirBolgesi;
+    }
+
+    public Integer getSehirNufusu() {
+        return sehirNufusu;
+    }
+
+    public void setSehirNufusu(Integer sehirNufusu) {
+        this.sehirNufusu = sehirNufusu;
     }
 
     public String getSehirAdi() {

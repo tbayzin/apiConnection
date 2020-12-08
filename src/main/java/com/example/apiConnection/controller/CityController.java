@@ -31,6 +31,13 @@ public class CityController {
     @ResponseBody
     public ArrayList <SehirDTO> addCity(@RequestBody ArrayList<SehirDTO> sehirList) {
 
+
+        SehirDTO innerDTO = new SehirDTO();
+
+        // Dönüşe göre sehirdto gibi baska bir dto olusturursam istediğim sekilde dönüs yaparım.
+        // Ama istediğim fieldlerin dönmesini bu metod içinde nasıl yaparım ?
+
+
         boolean flag = false;
         for (SehirDTO dto : sehirList) {
             if (dto.getSehirAdi().contains("kars")) {
@@ -54,7 +61,6 @@ public class CityController {
             System.out.println("içermiyor");
         }
             */
-
         return sehirList;
     }
 }
